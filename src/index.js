@@ -1,4 +1,3 @@
-import * as serviceWorker from './serviceWorker';
 import { StrictMode } from "react";
 import { createRoot } from 'react-dom/client';
 

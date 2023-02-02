@@ -11,10 +11,10 @@ import awsconfig from './aws-exports';
 
 Amplify.configure({
   Auth: {
-    identityPoolId: "us-west-2:18954031-af59-4a4b-bc93-d696f281f81c",
-    region: "us-west-2",
-    userPoolId: "us-west-2_eUimgA7jM",
-    userPoolWebClientId: "1i8165ohvip3gjcql01cv4dvut"
+    identityPoolId: 'us-west-2:18954031-af59-4a4b-bc93-d696f281f81c',
+    region: 'us-west-2',
+    userPoolId: 'us-west-2_eUimgA7jM',
+    userPoolWebClientId: '1i8165ohvip3gjcql01cv4dvut'
   }
 });
 
@@ -25,7 +25,7 @@ Amplify.configure({
 
 Amplify.addPluggable(new AWSIoTProvider({
   aws_pubsub_region: 'us-west-2',
-  aws_pubsub_endpoint: 'a387vttjfd7bvs-ats.iot.us-west-2.amazonaws.com/mqtt',
+  aws_pubsub_endpoint: 'wss://a387vttjfd7bvs-ats.iot.us-west-2.amazonaws.com/mqtt',
 }));
 
 
@@ -40,21 +40,21 @@ export default function App() {
     }
   });
 
-  const fetchRecentData = () => {
+  /*const fetchRecentData = () => {
     // Retrieve recent data from some sort of data storage service
-  };
+  };*/
   
   let priorConnectionState = ConnectionState;
   
-  Hub.listen("pubsub", data => {
+  Hub.listen('pubsub', data => {
     const { payload } = data;
     if (
       payload.event === CONNECTION_STATE_CHANGE
     ) {
      
-      if (priorConnectionState === ConnectionState.Connecting && payload.data.connectionState === ConnectionState.Connected) {
+      /*if (priorConnectionState === ConnectionState.Connecting && payload.data.connectionState === ConnectionState.Connected) {
         fetchRecentData();
-      }
+      }*/
       priorConnectionState = payload.data.connectionState;
     }
   });
