@@ -11,7 +11,7 @@ import awsconfig from './aws-exports';
 
 Amplify.configure({
   Auth: {
-    identityPoolId: 'us-west-2:18954031-af59-4a4b-bc93-d696f281f81c',
+    identityPoolId: 'us-west-2:54a034dc-3c4d-439e-b08a-6e9a6a328494',
     region: 'us-west-2',
     userPoolId: 'us-west-2_eUimgA7jM',
     userPoolWebClientId: '1i8165ohvip3gjcql01cv4dvut'
